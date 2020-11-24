@@ -1,0 +1,125 @@
+#page-landing {
+  background: linear-gradient(
+    329.54deg,
+    #29b6d1 0%,
+    #00c7c7
+  ); /*fará essa cor na parte superior a 0%*/
+  text-align: center; /* texto no centro*/
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+#container {
+  margin: auto;
+  width: min(90%, 112rem);
+}
+
+/*AGRUPAMENTO*/
+.location,
+h1,
+.visit p {
+  height: 16vh;
+}
+
+.visit a {
+  width: 8rem;
+  height: 8rem;
+  background: #ffd666;
+
+  border: none;
+  border-radius: 3rem;
+
+  display: flex;
+  align-items: center; /*alinha o eixo y ao x*/
+  justify-content: center; /*alinha o eixo x ao y e o background ficará alinha exatamente ao centro da imagem em href*/
+
+  margin: 0 auto; /* alinha ao centro da página automaticamente */
+  transition: background 300ms;
+  animation-delay: 250ms;
+}
+
+.visit a:hover {
+  background: #96feff;
+}
+
+/*ANIMACOES DO PAGE LANDING*/
+#logo {
+  animation-delay: 50ms;
+}
+
+.location {
+  animation-delay: 100ms;
+}
+
+main h1 {
+  animation-delay: 150ms;
+  font-size: clamp(4rem, 8vw, 8.4rem); /*minimo, ideal e maximo*/
+}
+
+.visit p {
+  animation-delay: 200ms;
+}
+
+/* desktop version */
+
+@media (min-width: 760px) {
+  /*só adiciona quando o parametro é verdadeiro*/
+  #container {
+    padding: 5rem 2rem;
+    background: url("../images/bg.svg") no-repeat 80% /
+      clamp(30rem, 54vw, 56rem);
+    /*background-position: bottom center; o 80% é o backgroud position que recebe o eixo x ou y 
+    bottom ou top e o alinhamento */
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*adiciona espaço entre eles*/
+  }
+
+  .location,
+  h1,
+  .visit p {
+    height: initial; /*aqui foi retirado 
+    os 16vh e deixado da forma inicial sem regras css*/
+    text-align: initial;
+  }
+
+  .location {
+    text-align: right;
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
+
+  main h1 {
+    font-weight: bold;
+    line-height: 0.88;
+
+    margin: clamp(10%, 9vh, 12%) 0 4rem;
+
+    width: min(300px, 80%);
+  }
+
+  main a {
+    position: absolute; /*cria um novo contexto uma nova lamina desvinculada*/
+    right: 4rem;
+    bottom: 4rem;
+  }
+
+  .visit {
+    display: flex;
+  }
+
+  .visit p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20vw, 30rem);
+  }
+
+  .visit a {
+    margin: initial; /*para retirara a formatação do auto*/
+  }
+}

@@ -1,0 +1,37 @@
+* {
+  margin: 0; /*retira o espaçamento do margin do browser*/
+  padding: 0; /*retira o espaçamento do padding do browser*/
+  box-sizing: border-box; /*calculo da caixa será
+  de uma borda a outra e não somando o valor do padding e width*/
+}
+
+body {
+  height: 100vh; /*divide em 100 blocos para completar background*/
+  color: white;
+  background: #EBF2F5;
+}
+
+:root {
+  /*para controle de todas as fonts usando rem e em*/
+  font-size: 62.5%;
+}
+
+body,
+input,
+button,
+textarea {
+  /* COMANDO FOI UNIFICADO NA PROPRIEDADE FONT
+    
+    font-weight: 400; 
+    font-size: 18px; tamanho da fonte
+    line-height: 1; espaçamento das linhas
+    font-family: 'Nunito', sans-serif; se ele não achar a fonte nunito vai para uma sem serifa */
+
+  font: 400 18px/1 "Nunito", sans-serif;
+}
+/* @ADENDO
+ em = SEMPRE BUSCA NO ELEMENTO ANTERIOR
+rem = PEGA A FORMATACAO DO HTML.
+
+SÃO USADOS PARA TEREM TAMANHOS FLEXÍVEIS
+*/

@@ -1,0 +1,38 @@
+
+aside.sidebar { /*smile*/
+    position: fixed;
+    height: 100%;
+    padding: 32px 24px; /*MESMA COISA QUE 3.2rem 2.4rem*/
+    background: #15C3D6;
+
+    display: flex; /*deixa uma caixa ao lado da outra*/
+    flex-direction: column; /*fica a abaixo*/
+    justify-content: space-between; /*espaçamento entre as caixas*/
+    align-items: center;
+}
+
+aside.sidebar footer button {/*botao de voltar*/
+    width: 48px;
+    height: 48px;
+    
+    border: none;
+    background: #12afcb;
+    border-radius: 1.6rem;
+    
+    cursor: pointer; /*quando passa o mouse em cima vira a maozinha*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 0.2s;
+
+}
+
+aside.sidebar footer button:hover {/*hover botao de voltar*/
+    background: #17d6eb;
+}
+
+.with-sidebar { /*class para separar o side bar do main*/
+    padding:  0 110px;
+}

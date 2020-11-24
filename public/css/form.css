@@ -1,0 +1,36 @@
+form {
+    width: 70rem;
+    height: 6.4rem auto;
+    background: white;
+
+    margin: 6.4rem auto; /* deixa o bloco centralizado a interface*/
+    border: 1px solid #D3E2E5; /*shorthand */
+    border-radius: 2rem;
+
+    overflow: hidden;
+
+    padding: 8rem;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset + fieldset { /*pega o irmao do primeiro*/
+    margin-top: 100rem;
+}
+
+fieldset legend {
+    width: 100%;
+
+    font-size: 3.2rem;
+    line-height: 1.5rem;
+    
+    color: #5c8599;
+    font-weight: 700;
+
+    border-bottom: 1px solid 2.4rem;
+    margin: 4rem 0 4rem 0;
+    padding-bottom: 2.4rem;
+
+}

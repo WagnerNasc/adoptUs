@@ -1,0 +1,150 @@
+#page-orphanage { /*div interface*/
+    display: flex;
+    min-height: 100vh;
+}
+
+/*ASIDE SIDE BAR - tem css próprio*/
+
+main {
+    flex: 1; /*está passando para o pai pegar o espaço disponível e tornar flexível
+*/
+}
+
+.orphanage-details { /*bloco das imagens*/
+    width: 70rem;
+    height: 6.4rem auto;
+    background: white;
+
+    margin: 6.4rem auto; /* deixa o bloco centralizado a interface*/
+    border: 1px solid #D3E2E5; /*shorthand */
+    border-radius: 2rem;
+
+    overflow: hidden; /*não deixa a imagem que está acima do bloco sobrepor*/
+}
+
+.orphanage-details > img { /* o sinal de maior pega a primeira imagem*/
+    width: 100%;
+    height: 30rem;  
+    object-fit: cover; /*a imagem vai se adaptar ao local*/
+
+   
+}
+
+.images {
+    display: grid;/*informa que vai ser feito um grid*/
+    grid-template-columns: repeat(6, 1fr); /*especifica a quantidade de colunas*/
+    column-gap: 1.6rem; /*espaço dentro da coluna*/
+    margin: 16px 40px 0;
+    
+}
+
+.images button {
+    background: none;
+    border: none;
+
+    height: 8.8rem;
+    cursor: pointer;
+    border-radius: 2rem;
+
+    overflow: hidden;/*limitar o conteudo da imagem a caixa do button*/
+    opacity: 0.6;
+
+    transition: opacity 0.2s;
+    
+}
+
+.images button:hover,
+images button:active {
+    opacity: 1;
+}
+
+.images button img {
+    width: 100%;
+    height: 8.8rem;
+    object-fit : cover;
+}
+
+/*content*/
+.orphanage-details-content {
+    padding: 8rem;
+}
+
+.orphanage-details-content h1 {
+    color: #4d6f80;
+    font: 700 5.4rem 'Nunito', sans-serif;
+    
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    
+}
+
+.orphanage-details-content p {
+    color: #5C8599;
+    font: 400 1.8rem 'Nunito', sans-serif;
+
+    line-height: 1.6;
+    margin-top: 2.4rem;
+}
+
+/*Map tem um css próprio*/
+
+
+.orphanage-details-content hr {
+    width: 100%;
+    height: 1px;
+
+    border: none;
+
+    background: #D3E2E6;
+
+    margin: 6.4rem 0;
+}
+
+.orphanage-details-content h2 {
+    font-size: 3.6rem;
+    line-height: 1.5rem;
+    color: #4D6F80;
+}
+
+.open-details { /*imagem dos horários de visita*/
+    margin-top: 2.4rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+}
+
+.open-details div {
+    padding: 3.2rem 2.4rem;
+}
+
+.open-details img {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.hour {
+    background: linear-gradient(149.97deg, #E6F7FB 8.13%, #FFFFFF 92.67%);
+    border: 1px solid #B3DAE2;
+    border-radius: 20px;
+    line-height: 1.5;
+    color: #5C8599;
+    
+}
+
+.open-on-weekends {
+    border-radius: 20px;
+    line-height: 1.5;
+}
+
+.open-on-weekends.open {
+    background: linear-gradient(154.16deg, #EDFFF6 7.85%, #FFFFFF 91.03%);
+    border: 1px solid #A1E9C5;
+    color: #37C77F;
+}
+
+.open-on-weekends.closed {
+    background: linear-gradient(154.16deg, #FCF0F4 7.85%, #FFFFFF 91.03%);
+    border: 1px solid #FFBCD4;
+    color: #FF999D;
+}
