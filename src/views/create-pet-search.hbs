@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Adicionar onde viu o PET | HappyDog</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <link rel="icon" href="/images/logo-icon.ico" />
+    <link rel="stylesheet" href="/css/animation.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/map.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/buttons.css" />
+    <link rel="stylesheet" href="/css/page-pet-search.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="page-pet-search">
+      <aside class="animate-right sidebar">
+        <img src="/images/small-dog.png" alt="Happy days" />
+
+        <footer>
+          <button onclick="history.back()">
+            <img src="/images/arrow-back.svg" alt="Voltar" />
+          </button>
+        </footer>
+      </aside>
+
+      <main class="animate-appear with-sidebar">
+        <form action="">
+          <fieldset>
+            <legend>Dados</legend>
+          </fieldset>
+
+          <div class="map-container">
+            <div id="mapid"></div>
+            <!-- o hidden para deixar invisible -->
+            <input type="hidden" name="lat">
+            <input type="hidden" name="lng">
+            <footer>
+              <a href="#" id="select-point">
+                Clique no mapa para adicionar a localização que viu o PET
+              </a>
+            </footer>
+          </div>
+          
+          <div class="input-block">
+            <label for="name">Seu nome</label>
+              <input type="name" id="name" name="name" required>
+          </div>
+
+          <div class="input-block">
+            <label for="about">Detalhes do Pet <span>Máximo de 300 caracteres</span></label>
+              <textarea type="about" id="about" name="about" required></textarea><!-- não quebrar linha no textarea -->
+          </div>
+
+          <div class="input-block">
+            <label for="whatsapp">Deixe seu whatsapp</label>
+              <input type="whatsapp" id="whatsapp" name="whatsapp" required>
+          </div>
+
+          <div class="input-block images">
+            <label for="images">Foto do pet</label>
+
+            <div class="images-upload" id="images">
+
+            <div class="new-upload"> <!-- Essa classe será duplicada pelo JS-->
+              <input name="images" placeholder="Cole o link da foto aqui" required>
+              <span onclick="deleteField(event)">
+                <img src="/images/delete-file.svg" alt="Deleta imagem">
+              </span>
+            </div>
+          </div>
+
+            
+            <button 
+            onclick="addPhotoField()" 
+            type="button"> <!-- se não colocar o type o button por padrao irá tentar enviar o form -->
+              <img src="/images/add-file.svg" alt="Nova Imagem">
+            </button>
+          </div>
+
+          <div class="input-block">
+            <label for="time_seen">Horário que foi visto</label>
+              <input type="time_seen" id="time_seen" name="time_seen" required>
+          </div>
+
+
+            <button type="submit" class="primary-button">
+              Confirmar
+            </button>
+          </div>
+        </form>
+      </main>
+      </div>
+    </div>
+   <script src="/scripts/page-pet-search.js"></script>
+  </body>
+</html>

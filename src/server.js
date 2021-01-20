@@ -5,6 +5,7 @@ const path = require('path');
 const pages = require('./pages.js');
 
 
+
 //iniciando o express
 const server = express()
 
@@ -19,9 +20,10 @@ server
 
     // rota para a aplicação
     .get('/', pages.index)
-    .get('/orphanage', pages.orphanage)
-    .get('/orphanages', pages.orphanages)
-    .get('/create-orphanage', pages.createOrphanage)
+    .get('/pet', pages.pet)
+    .get('/pets', pages.pets)
+    .get('/create-pet-search', pages.createPetSearch)
+
 
         // envia resposta usando sendFile usando o objeto path e pegando a sua propriedade join para concatenar os valores e chegar ao dir res.sendFile(path.join(__dirname, 'views' , 'index.html'))
         
@@ -32,4 +34,4 @@ server
 
 
 // ligar servidor
-server.listen(5500)
+server.listen(3300)

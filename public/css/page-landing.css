@@ -1,3 +1,9 @@
+
+:root {
+  --bg-arrow-button: #EA8857;
+  --bg-arrow-button-hover: #FFC599;
+}
+
 #page-landing {
   background: linear-gradient(
     329.54deg,
@@ -20,13 +26,13 @@
 .location,
 h1,
 .visit p {
-  height: 16vh;
+  height: 13vh;
 }
 
 .visit a {
   width: 8rem;
   height: 8rem;
-  background: #ffd666;
+  background: var(--bg-arrow-button);
 
   border: none;
   border-radius: 3rem;
@@ -41,7 +47,7 @@ h1,
 }
 
 .visit a:hover {
-  background: #96feff;
+  background: var(--bg-arrow-button-hover);
 }
 
 /*ANIMACOES DO PAGE LANDING*/
@@ -68,7 +74,7 @@ main h1 {
   /*só adiciona quando o parametro é verdadeiro*/
   #container {
     padding: 5rem 2rem;
-    background: url("../images/bg.svg") no-repeat 80% /
+    background: url("../images/bg-pets.png") no-repeat 80% /
       clamp(30rem, 54vw, 56rem);
     /*background-position: bottom center; o 80% é o backgroud position que recebe o eixo x ou y 
     bottom ou top e o alinhamento */
@@ -91,16 +97,16 @@ main h1 {
   .location {
     text-align: right;
     font-size: 2.4rem;
-    line-height: 1.5;
+    line-height: 1.2;
   }
 
   main h1 {
     font-weight: bold;
     line-height: 0.88;
 
-    margin: clamp(10%, 9vh, 12%) 0 4rem;
+    margin: clamp(5%, 9vh, 12%) 0 4rem;
 
-    width: min(300px, 80%);
+    width: min(500px, 45%);
   }
 
   main a {
@@ -115,7 +121,7 @@ main h1 {
 
   .visit p {
     font-size: 2.4rem;
-    line-height: 1.5;
+    line-height: 1.2;
     width: clamp(20rem, 20vw, 30rem);
   }
 

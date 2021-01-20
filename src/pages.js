@@ -1,5 +1,5 @@
 const Database = require('./database/db');
-// const saveOrphanage = require ('./saveOrphanage')
+// const savePet = require ('./savePet')
 
 //pega pages na variável
 module.exports = {
@@ -8,33 +8,33 @@ module.exports = {
         return res.render('index', { city })
     },
 
-    async orphanage(req, res) {
+    async pet(req, res) {
         const id = req.query.id
 
         try {
             const db = await Database; // para não precisar fazer uma function e colocar tudo dentro
-            const results = await db.all(`SELECT * FROM orphanages WHERE id = "${id}";`)
-            const orphanage = results[0]
+            const results = await db.all(`SELECT * FROM pets WHERE id = "${id}";`)
+            const pet = results[0]
 
             // voltar a imagem para um array  e não uma String
-            orphanage.images = orphanage.images.split(',')
-            orphanage.firstImage = orphanage.images[0]
+            pet.images = pet.images.split(',')
+            pet.firstImage = pet.images[0]
             
-            orphanage.open_on_weekends == "0" ? orphanage.open_on_weekends = false : orphanage.open_on_weekends = true;
+            pet.open_on_weekends == "0" ? pet.open_on_weekends = false : pet.open_on_weekends = true;
 
-            return res.render('orphanage', { orphanage }) //as aspas referem-se ao hbs    
+            return res.render('pet', { pet }) //as aspas referem-se ao hbs    
         } catch (error) {
             console.log(error)
             return res.send('Erro no banco de dados!')
         }
     },
 
-    async orphanages(req, res) {
+    async pets(req, res) {
         // colocar o orphanage pelo banco
         try {
             const db = await Database; // para não precisar fazer uma function e colocar tudo dentro
-            const orphanages = await db.all("SELECT * FROM orphanages")
-            return res.render('orphanages', { orphanages }) //as aspas referem-se ao hbs    
+            const pets = await db.all("SELECT * FROM pets")
+            return res.render('pets', { pets }) //as aspas referem-se ao hbs    
         } catch (error) {
             console.log(error)
             return res.send('Erro no banco de dados!')
@@ -43,7 +43,7 @@ module.exports = {
 
     },
 
-    createOrphanage(req, res) {
-        return res.render('create-orphanage')
+    createPetSearch(req, res) {
+        return res.render('create-pet-search')
     }
 }

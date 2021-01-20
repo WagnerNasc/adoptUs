@@ -16,7 +16,7 @@ aside.sidebar footer button {/*botao de voltar*/
     height: 48px;
     
     border: none;
-    background: #12afcb;
+    background: #EA8857;
     border-radius: 1.6rem;
     
     cursor: pointer; /*quando passa o mouse em cima vira a maozinha*/
@@ -30,7 +30,7 @@ aside.sidebar footer button {/*botao de voltar*/
 }
 
 aside.sidebar footer button:hover {/*hover botao de voltar*/
-    background: #17d6eb;
+    background: #FFC599;
 }
 
 .with-sidebar { /*class para separar o side bar do main*/
