@@ -1,9 +1,9 @@
 form {
     width: 70rem;
-    height: 6.4rem auto;
+    height: 5rem auto;
     background: white;
 
-    margin: 6.4rem auto; /* deixa o bloco centralizado a interface*/
+    margin: 5rem auto; /* deixa o bloco centralizado a interface*/
     border: 1px solid #D3E2E5; /*shorthand */
     border-radius: 2rem;
 
@@ -12,6 +12,12 @@ form {
     padding: 8rem;
 }
 
+@media (min-width: 540px){ 
+    form {
+        width: clamp(39rem, 68vw, 90rem);
+        margin: 5rem auto;
+    }
+}
 fieldset {
     border: none;
 }

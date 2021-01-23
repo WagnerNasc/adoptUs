@@ -11,6 +11,9 @@ const server = express()
 
 
 server
+    // utilizar body do req para pegar no pages
+    .use(express.urlencoded({ extended: true }))
+
     // ele cria todas as rotas, retirar o  do index 
     .use(express.static('public')) 
 
@@ -23,6 +26,7 @@ server
     .get('/pet', pages.pet)
     .get('/pets', pages.pets)
     .get('/create-pet-search', pages.createPetSearch)
+    .post('/savePet', pages.savePet)
 
 
         // envia resposta usando sendFile usando o objeto path e pegando a sua propriedade join para concatenar os valores e chegar ao dir res.sendFile(path.join(__dirname, 'views' , 'index.html'))

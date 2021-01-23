@@ -1,5 +1,6 @@
 // create map
-const map = L.map('mapid').setView([-23.9513003,-46.4624866], 16); // primeiro argumento são as cordenadas e segundo o zoom
+
+const map = L.map('mapid').setView([-23.9513003,-46.4624866], 12); // primeiro argumento são as cordenadas e segundo o zoom
 
 // create and add tileLayer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
@@ -8,15 +9,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 //create icon
 const icon = L.icon({
     iconUrl: "/images/location.svg", // caminho relativo da imagem
-    iconSize: [58,68], // altura e largura do icone
+    //shadowUrl: "/images/location.svg",
+    iconSize: [48,58], // altura e largura do icone
+    //shadowSize: [80,96], 
+    popupAnchor: [-3, -76], //onde o popup vai ficar ancorado
 })
 
 let marker;
+
 
 // create and add marker
 map.on('click', (event) => { /*ao clicar o event retorna lat e long dentro do latlng*/
     const lat = event.latlng.lat;
     const lng = event.latlng.lng;
+
 
     // acessar o input hidden para passar a latitude de longitude
     // a lat e long enviadas para URL
@@ -99,4 +105,19 @@ function toggleSelect(event) {
     const input = document.querySelector('[name="open_on_weekends"]')
     input.value = button.dataset.value
 
+}
+    
+// verificar se o mapa foi preenchido
+
+// só está validando a lat
+
+function validate(event) {
+    const lat = document.querySelector('[name=lat]')
+
+    if(lat.value == ''){
+        event.preventDefault()
+        alert('Selecione no um ponto no mapa.')
+    } else {
+        alert('Dados enviado com sucesso.')
+    }
 }

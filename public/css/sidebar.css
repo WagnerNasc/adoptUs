@@ -11,6 +11,12 @@ aside.sidebar { /*smile*/
     align-items: center;
 }
 
+@media (min-width: 540px){ 
+    aside.sidebar {
+        padding: clamp(0.3rem, 1.5vw, 1.8rem);
+    }
+}
+
 aside.sidebar footer button {/*botao de voltar*/
     width: 48px;
     height: 48px;
@@ -24,6 +30,7 @@ aside.sidebar footer button {/*botao de voltar*/
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: none;
 
     transition: background-color 0.2s;
 

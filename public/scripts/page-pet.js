@@ -8,8 +8,15 @@ const options = {
     zoomControl: false
 }
 
+// pegar lat e lng do HTML
+
+const span = document.getElementById('datamarker');
+
+const getLat = span.dataset.lat
+const getLng = span.dataset.lng
+
 // create map
-const map = L.map('mapid', options).setView([-23.9513003,-46.4624866], 16); // primeiro argumento são as cordenadas e segundo o zoom
+const map = L.map('mapid', options).setView([getLat, getLng], 12); // primeiro argumento são as cordenadas e segundo o zoom
 
 // create and add title
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
@@ -18,17 +25,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 //create icon
 const icon = L.icon({
     iconUrl: "/images/location.svg", // caminho relativo da imagem
-    iconSize: [58,68], // altura e largura do icone
+    //shadowUrl: "/images/location.svg",
+    iconSize: [48,58], // altura e largura do icone
+    //shadowSize: [80,96],
     iconAnchor: [29, 68], //onde o icon vai ficar ancorado
-    popupAnchor: [170, 2], //onde o popup vai ficar ancorado
+    popupAnchor: [-3, -73], //onde o popup vai ficar ancorado
     
 })
 
-
 // create and add marker
 L
-.marker([-23.9513003,-46.4624866], { icon }) // é passado a variavel icon como parametro que é um objeto mas como tem o mesmo nome não precisa fazer icon: icon. E assim ele aplica imagem ao mapa.
+.marker([getLat, getLng], { icon }) // é passado a variavel icon como parametro que é um objeto mas como tem o mesmo nome não precisa fazer icon: icon. E assim ele aplica imagem ao mapa.
 .addTo(map)
+
+
 
 /*image gallery*/
 

@@ -1,5 +1,5 @@
 const Database = require('./database/db');
-// const savePet = require ('./savePet')
+const savePet = require ('./database/savePet');
 
 //pega pages na variável
 module.exports = {
@@ -20,7 +20,6 @@ module.exports = {
             pet.images = pet.images.split(',')
             pet.firstImage = pet.images[0]
             
-            pet.open_on_weekends == "0" ? pet.open_on_weekends = false : pet.open_on_weekends = true;
 
             return res.render('pet', { pet }) //as aspas referem-se ao hbs    
         } catch (error) {
@@ -45,5 +44,35 @@ module.exports = {
 
     createPetSearch(req, res) {
         return res.render('create-pet-search')
+    },
+
+    async savePet(req, res) {
+        const fields = req.body
+
+        //validação de preenchimento de campos
+        // o object transformou o valor de fields em um array
+        if(Object.values(fields).includes('')) { // ver se inclui algo vazio
+            return res.send('Todos os campos devem ser preeenchidos!')
+        } 
+        
+        // salvar o pet 
+        try {
+            const db = await Database
+            await savePet(db, {
+                lat: fields.lat,
+                lng: fields.lng,
+                name: fields.name,
+                about: fields.about,
+                whatsapp: fields.whatsapp,
+                images: fields.images.toString(),
+                time_seen: fields.time_seen
+            })
+
+            //redirecionar para página PETS
+            return res.redirect('/pets')
+        } catch (error) {
+            console.log(error)
+            return res.send('Erro no banco de dados')
+        }
     }
 }

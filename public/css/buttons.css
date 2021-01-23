@@ -6,6 +6,8 @@
     height: 6.4rem;
     border: 0;
 
+    text-decoration: none;
+
     cursor: pointer;
 
     background: #3cdc8c;
@@ -16,6 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: none;
 
     transition: background-color 200ms;
 }
